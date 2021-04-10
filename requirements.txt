@@ -7,3 +7,8 @@ spacy
 bs4
 IPython
 spacy_streamlit
+numpy
+wikipedia
+en_core_web_sm
+requests
+re
