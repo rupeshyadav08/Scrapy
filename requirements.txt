@@ -9,5 +9,4 @@ IPython
 spacy_streamlit
 numpy
 wikipedia
-requests
-re
+
