@@ -23,12 +23,8 @@ import spacy
 from spacy import displacy
 from collections import Counter
 import en_core_web_sm
-from bs4 import BeautifulSoup
-import requests
-import re
 
 
-from PIL import Image
 
 #app=Flask(__name__)
 #Swagger(app)
