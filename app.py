@@ -7,21 +7,16 @@ Created on Sat Apr 10 23:32:42 2021
 """
 import spacy_streamlit
 
-import numpy as np
 #from flasgger import Swagger
 import streamlit as st 
 
-from IPython.core.display import display, HTML
-import streamlit as st
 import wikipedia
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.tag import pos_tag
 from nltk.chunk import conlltags2tree, tree2conlltags
-from pprint import pprint
 import spacy
 from spacy import displacy
-from collections import Counter
 import en_core_web_sm
 
 
