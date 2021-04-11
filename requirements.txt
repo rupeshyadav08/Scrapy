@@ -1,5 +1,5 @@
 Flask
-!python -m spacy download en_core_web_lg
+!python spacy download en_core_web_lg
 matplotlib
 pandas
 nltk
