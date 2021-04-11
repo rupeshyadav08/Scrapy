@@ -63,7 +63,7 @@ def predict_note_authentication(data2):
             description: The output values
         
     """
-   
+    nltk.download('punkt')
     data=(wikipedia.summary(data2))
     def preprocess(sentence):
         sentence = nltk.word_tokenize(sentence)
