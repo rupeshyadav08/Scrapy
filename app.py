@@ -99,7 +99,7 @@ def main():
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
-    data2 = st.text_input("Type page to scrape of wikipedia example America","Type Here")
+    data2 = st.text_input("Only wikipedia page allowed,Type page name from wikipedia to do scrapping and Perform Named Entity Recognition on scrapped data and extract entities like city, person, organisation, Date, Geographical Entity, Product etc.","Type Here")
     
     #result=""
     if st.button("Scrap"):
