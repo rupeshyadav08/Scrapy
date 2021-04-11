@@ -33,44 +33,46 @@ def welcome():
 #@app.route('/predict',methods=["Get"])
 def predict_note_authentication(data2):
     
-    """Let's Authenticate the Banks Note 
-    This is using docstrings for specifications.
-    ---
-    parameters:  
-      - name: variance
-        in: query
-        type: number
-        required: true
-      - name: skewness
-        in: query
-        type: number
-        required: true
-      - name: curtosis
-        in: query
-        type: number
-        required: true
-      - name: entropy
-        in: query
-        type: number
-        required: true
-    responses:
-        200:
-            description: The output values
-        
+    """Using Nltk , Spacy ,Streamlit to Perform 
+    Named Entity Recognition on scrapped data 
+    and extract entities like city, person, 
+    organisation, Date, Geographical Entity, Product etc.  
+    
+    data2= page name of wikipedia to extract data
+    
     """
+    
     nltk.download('punkt')
     nltk.download('averaged_perceptron_tagger') 
     data=(wikipedia.summary(data2))
+    
+    #Then we apply word tokenization and part-of-speech tagging to the sentence.
+    
     def preprocess(sentence):
         sentence = nltk.word_tokenize(sentence)
         sentence = nltk.pos_tag(sentence)
         return sentence
     sentence = preprocess(data)
+    
+    #Creating Chunk rule for text phrasing
+    #Our chunk pattern consists of one rule, 
+    #that a noun phrase, NP, should be formed whenever the chunker 
+    #finds an optional determiner, DT, followed by any 
+    #number of adjectives, JJ, and then a noun, NN.
+    
     pattern = 'NP: {<DT>?<JJ>*<NN>}'
+    
+    #create a chunk parser and test it on our sentence
     cp = nltk.RegexpParser(pattern)
     cs = cp.parse(sentence)
-
+    
+    
+    #IOB tags  to represent chunk structures in files, and we will also be using this format.
+    
     iob_tagged = tree2conlltags(cs)
+    
+    #Use of Spacy
+    
     nlp = en_core_web_sm.load()
     doc=nlp(data)
     #pprint([(X.text, X.label_) for X in doc.ents])
@@ -84,6 +86,9 @@ def predict_note_authentication(data2):
     sentences = [x for x in article.sents]
     #print(sentence)
     
+    #Use of spacy_streamlit
+    #The package includes building blocks that call 
+    #into Streamlit and set up all the required elements for you. 
     default_text = data
     models = ["en_core_web_sm"]
     spacy_streamlit.visualize(models,default_text,sentence)
@@ -92,6 +97,7 @@ def predict_note_authentication(data2):
 
 
 def main():
+    #Html for styling
     st.title("Scraper")
     html_temp = """
     <div style="background-color:red;padding:10px">
@@ -101,10 +107,11 @@ def main():
     st.markdown(html_temp,unsafe_allow_html=True)
     data2 = st.text_input("Only wikipedia page allowed,Type page name from wikipedia to do scrapping and Perform Named Entity Recognition on scrapped data and extract entities like city, person, organisation, Date, Geographical Entity, Product etc.","Type Here")
     
-    #result=""
+    #Creating the predict button
     if st.button("Scrap"):
         predict_note_authentication(data2)
-    
+        
+    #Creating about section
     if st.button("About"):
         st.text("Yadav RupeshKumar Mohanlal")
         st.text("Built with Streamlit and python")
