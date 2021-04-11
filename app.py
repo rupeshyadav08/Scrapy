@@ -22,7 +22,7 @@ from pprint import pprint
 import spacy
 from spacy import displacy
 from collections import Counter
-import en_core_web_sm
+#import en_core_web_sm
 
 
 
