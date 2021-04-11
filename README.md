@@ -10,9 +10,16 @@ https://scrapy098.herokuapp.com/
 
 The  NER(Named Entity Recognition)  is performed  at the bottom of the app page
 
-![alt text](![alt text](https://github.com/rupeshyadav08/Scrapy/blob/main/Screenshot%202021-04-11%20at%2017.05.50.png))
+![alt text](https://github.com/rupeshyadav08/Scrapy/blob/main/Screenshot%202021-04-11%20at%2017.16.32.png)
 
 
 The required library are in requirement.txt
+
+The app is deployed on heroku enviornment 
+
+resources:-
+  towardsdatascience.com
+  python.org
+  youtube.com
 
 
