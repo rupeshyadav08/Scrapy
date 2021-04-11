@@ -76,17 +76,17 @@ def predict_note_authentication(data2):
     cs = cp.parse(sentence)
 
     iob_tagged = tree2conlltags(cs)
-    nlp = en_core_web_sm.load()
-    doc=nlp(data)
+    #nlp = en_core_web_sm.load()
+    #doc=nlp(data)
     #pprint([(X.text, X.label_) for X in doc.ents])
     ny_bb=data
-    article = nlp(ny_bb)
+    #article = nlp(ny_bb)
 
-    labels = [x.label_ for x in article.ents]
+    #labels = [x.label_ for x in article.ents]
     #Counter(labels)
-    items = [x.text for x in article.ents]
+    #items = [x.text for x in article.ents]
     #Counter(items).most_common(9)
-    sentences = [x for x in article.sents]
+    #sentences = [x for x in article.sents]
     #print(sentence)
     
     default_text = data
