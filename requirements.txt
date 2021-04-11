@@ -3,5 +3,6 @@ nltk==3.6.1
 streamlit==0.80.0
 spacy_streamlit
 wikipedia
-spacy>=2.0.16,<2.1.0
-https://github.com/explosion/spacy-models/releases/download/en_vectors_web_lg-2.0.0/en_vectors_web_lg-2.0.0.tar.gz
+spacy>=3.0.0,<4.0.0
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz#egg=en_core_web_sm
+
